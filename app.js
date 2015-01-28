@@ -23,8 +23,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.route('/')
-    //list all our inventory items
+    // list all our inventory items
     .get(inventory.list);
+
+app.route('/:id')
+    // view a single item
+    .get(inventory.show);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
