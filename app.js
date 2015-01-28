@@ -34,7 +34,9 @@ app.route('/:id')
     // view a single item
     .get(inventory.show)
     // update a single item
-    .post(inventory.update);
+    .post(inventory.update)
+    // delete a single item
+    .delete(inventory.delete);
 
 app.route('/:id/edit')
     // open edit form

@@ -49,3 +49,8 @@ exports.update = function (req, res) {
     items[index] = item;
     res.redirect('/' + id);
 };
+
+exports.delete = function (req, res) {
+    _.remove(items, {id: req.params.id});
+    res.json({success: true});
+};
