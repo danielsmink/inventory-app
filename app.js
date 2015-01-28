@@ -24,11 +24,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.route('/')
     // list all our inventory items
-    .get(inventory.list);
+    .get(inventory.list)
+    // create new inventory items
+    .post(inventory.create);
+
+app.get('/new', inventory.new);
 
 app.route('/:id')
     // view a single item
-    .get(inventory.show);
+    .get(inventory.show)
+    // update a single item
+    .post(inventory.update);
+
+app.route('/:id/edit')
+    // open edit form
+    .get(inventory.edit);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

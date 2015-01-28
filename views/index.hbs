@@ -1,11 +1,11 @@
-<h1>My Inventory <a class="add contain" href="#">+</a></h1>
+<h1>My Inventory <a class="add contain" href="/new">+</a></h1>
 
 <div class="content">
     <ul class="items">
         {{#each items}}
           <li>
               <div class="actions">
-                  <a href="#" class="edit button">edit</a>
+                  <a href="/{{id}}/edit" class="edit button">edit</a>
                   <span class="delete">&times;</span>
               </div>
               <a href="/{{id}}">
