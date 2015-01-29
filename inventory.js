@@ -2,6 +2,14 @@
  * Created by dsmink on 28/01/2015.
  */
 
+var mongoose = require('mongoose');
+
+var itemSchema = mongoose.Schema({
+    item: String
+})
+
+var Item = mongoose.model('Item', itemSchema);
+
 var items = [];
 
 var _ = require('lodash');

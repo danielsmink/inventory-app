@@ -1,4 +1,5 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -73,5 +74,18 @@ app.use(function(err, req, res, next) {
     });
 });
 
+if (app.get('env') === 'development') {
+    mongoose.connect('mongodb://localhost');
+} else {
+    mongoose.connect('mongodb://priv25:private25@ds053808.mongolab.com:53808/heroku_app33558563');
+}
+
+var db = mongoose.connection;
+db.on('error', function callback () {
+    console.error('connection error');
+});
+db.once('open', function callback () {
+    console.error('connection success');
+});
 
 module.exports = app;
