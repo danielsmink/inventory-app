@@ -18,5 +18,9 @@
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-http": "^1.0.0"
   }
 }
