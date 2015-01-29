@@ -12,8 +12,6 @@ var itemSchema = mongoose.Schema({
 
 var Item = mongoose.model('Item', itemSchema);
 
-var items = [];
-
 var _ = require('lodash');
 
 function getRecord (req, callback) {
