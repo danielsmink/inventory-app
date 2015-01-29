@@ -5,7 +5,6 @@
 var mongoose = require('mongoose');
 
 var itemSchema = mongoose.Schema({
-    _id: Number,
     name: String,
     description: String
 })
@@ -49,7 +48,6 @@ exports.create = function (req, res) {
         res.statusCode = 400;
     } else {
         var item = new Item({
-            _id: _.uniqueId(),
             name: req.body.name,
             description: req.body.description
         });
