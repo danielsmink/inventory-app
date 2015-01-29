@@ -77,7 +77,7 @@ app.use(function(err, req, res, next) {
 if (app.get('env') === 'development') {
     mongoose.connect('mongodb://localhost');
 } else {
-    mongoose.connect('mongodb://priv25:private25@ds053808.mongolab.com:53808/heroku_app33558563');
+    mongoose.connect(process.env.MONGOLAB_URI);
 }
 
 var db = mongoose.connection;
